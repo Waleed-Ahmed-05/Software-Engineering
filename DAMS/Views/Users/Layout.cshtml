@@ -1,0 +1,17 @@
+﻿@page
+@{
+    Layout = "_Layout";
+}
+
+@if (TempData["SM_02"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_02"]
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}

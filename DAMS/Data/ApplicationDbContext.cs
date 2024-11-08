@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DAMS.Models;
 
 namespace DAMS.Data
 {
@@ -9,5 +10,6 @@ namespace DAMS.Data
             : base(options)
         {
         }
+        public DbSet<DAMS.Models.User> User { get; set; } = default!;
     }
 }

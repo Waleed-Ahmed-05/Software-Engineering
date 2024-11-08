@@ -1,0 +1,73 @@
+﻿@model DAMS.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["DM_01"] != null)
+{
+    <div class="alert alert-danger" id="popup">
+        @TempData["DM_01"]
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_01"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_01"]
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Validate" class="centered-form">
+                    <h1 style=""><b>Log IN</b></h1>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <div class="icon-container-1">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input asp-for="Email" class="form-control" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="icon-container-1">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="form-group center-button">
+                        <input type="submit" value="Login" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

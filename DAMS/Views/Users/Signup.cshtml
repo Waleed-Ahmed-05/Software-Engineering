@@ -1,0 +1,81 @@
+﻿@model DAMS.Models.User
+
+@{
+    ViewData["Title"] = "Sign-Up";
+}
+@if (TempData["DM_02"] != null)
+{
+    <div class="alert alert-danger" id="popup">
+        @TempData["DM_02"]
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="container centered-content">
+    <h1 class="heading-padding">Sign-up to start using DAMS</h1>
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group display">
+                <label class="Gap Gap-Top">Your Personal Details</label>
+                <input asp-for="First_Name" class="form-control width Gap" placeholder="First Name" />
+                <input asp-for="Last_Name" class="form-control width" placeholder="Last Name" />
+            </div>
+            <br>
+            <div class="form-group display">
+                <select asp-for="Gender" class="form-control width Gap Gap-Left">
+                    <option value="">Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <input asp-for="Age" type="number" class="form-control width" placeholder="Enter your Age" />
+            </div>
+            <br>
+            <div class="form-group display">
+                <input asp-for="DOB" type="date" class="form-control width Gap Gap-Left" placeholder="Date of birth" />
+                <input asp-for="Contact" type="number" class="form-control width" placeholder="Enter your contact" />
+            </div>
+            <br>
+            <div class="form-group display">
+                <input asp-for="CNIC" type="number" class="form-control width Gap Gap-Left" placeholder="Enter Your CNIC Number" />
+                <select asp-for="Role" class="form-control width">
+                    <option value="">Select Your Desired Role</option>
+                    <option value="Patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Personal Assistant">Personal Assistant</option>
+                    <option value="Pharmacologist">Pharmacologist</option>
+                    <option value="Driver">Driver</option>
+                </select>
+            </div>
+            <hr>
+            <div class="form-group display">
+                <label class="Gap-Top">Your Account Credentials</label>
+                <div class="icon-container Gap-Left-1 Gap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Your Email" />
+                </div>
+                <div class="icon-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input asp-for="Password" type="password" class="form-control " placeholder="Enter Your Desired Password" />
+                </div>
+            </div>
+            <br>
+            <div class="form-group Gap-Left-2">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
