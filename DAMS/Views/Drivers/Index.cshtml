@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DAMS.Models.Driver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle_Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number_Plate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle_Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_Plate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Driver_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Driver_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Driver_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

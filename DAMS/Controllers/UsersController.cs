@@ -149,11 +149,21 @@ namespace DAMS.Controllers
             {
                 _context.User.Remove(user);
             }
-
-            var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
-            if (doctor != null)
+            if(user.Role == "Doctor")
             {
-                _context.Doctor.Remove(doctor);
+                var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
+                if (doctor != null)
+                {
+                    _context.Doctor.Remove(doctor);
+                }
+            }
+            else if(user.Role == "Driver")
+            {
+                var driver = await _context.Driver.FirstOrDefaultAsync(d => d.User_ID == id);
+                if (driver != null)
+                {
+                    _context.Driver.Remove(driver);
+                }
             }
 
             await _context.SaveChangesAsync();
@@ -200,6 +210,10 @@ namespace DAMS.Controllers
             {
                 return View("~/Views/Doctors/Create.cshtml");
             }
+            else if(Data.Role == "Driver")
+            {
+                return View("~/Views/Drivers/Create.cshtml");
+            }
             return View("Login");
         }
         public async Task<IActionResult> Edit_Additional_Details(int id)
@@ -211,6 +225,12 @@ namespace DAMS.Controllers
                 var Data_01 = await _context.Doctor.Where(u => u.User_ID == id).FirstOrDefaultAsync();
                 ViewBag.Data_01 = Data_01;
                 return View("~/Views/Doctors/Edit.cshtml", Data_01);
+            }
+            else if(Data.Role == "Driver")
+            {
+                var Data_01 = await _context.Driver.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+                ViewBag.Data_01 = Data_01;
+                return View("~/Views/Drivers/Edit.cshtml", Data_01);
             }
             return View("Layout");
         }
