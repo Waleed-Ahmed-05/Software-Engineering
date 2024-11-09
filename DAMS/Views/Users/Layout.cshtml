@@ -15,3 +15,15 @@
         }, 3000);
     </script>
 }
+@if (TempData["SM_03"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_03"]
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}

@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-08T18:01:17.987Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAADwv6oAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\UsersController.cs*",
+              "RelativeToolTip": "Controllers\\UsersController.cs*",
+              "ViewState": "AgIAAMAAAAAAAAAAAADwv9YAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T17:54:54.716Z",
               "IsPinned": true,

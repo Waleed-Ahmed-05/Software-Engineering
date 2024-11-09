@@ -58,7 +58,7 @@ namespace DAMS.Controllers
                 {
                     _context.Add(user);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Login));
+                    return RedirectToAction(nameof(Additional_Details), new { User_ID = user.User_ID });
                 }
                 return View(user);
             }
@@ -149,6 +149,13 @@ namespace DAMS.Controllers
             {
                 _context.User.Remove(user);
             }
+
+            var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
+            if (doctor != null)
+            {
+                _context.Doctor.Remove(doctor);
+            }
+
             await _context.SaveChangesAsync();
             TempData["SM_01"] = "Account Deletion Successful.";
             return RedirectToAction(nameof(Login));
@@ -185,6 +192,27 @@ namespace DAMS.Controllers
             }
             TempData["DM_01"] = "Login failed. Either the E-mail or Password is Invlaid.";
             return View("Login");
+        }
+        public async Task<IActionResult> Additional_Details(int User_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            if (Data.Role == "Doctor")
+            {
+                return View("~/Views/Doctors/Create.cshtml");
+            }
+            return View("Login");
+        }
+        public async Task<IActionResult> Edit_Additional_Details(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            if(Data.Role == "Doctor")
+            {
+                var Data_01 = await _context.Doctor.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+                ViewBag.Data_01 = Data_01;
+                return View("~/Views/Doctors/Edit.cshtml", Data_01);
+            }
+            return View("Layout");
         }
     }
 }

@@ -51,8 +51,9 @@
             </div>
             <br>
             <div class="form-group Gap-Left-3 display">
-                <a asp-action="Delete" class="btn btn-danger Gap-2" asp-route-id="@ViewBag.Data.User_ID">Delete</a>
-                <input type="submit" value="Confirm" class="btn btn-success" />
+                <a asp-action="Edit_Additional_Details" class="btn btn-success Gap-2" asp-route-id="@ViewBag.Data.User_ID">Change Additional Details</a>
+                <input type="submit" value="Confirm" class="btn btn-success Gap-2" />
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@ViewBag.Data.User_ID">Delete</a>
             </div>
         </form>
     </div>
