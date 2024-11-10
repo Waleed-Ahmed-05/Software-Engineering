@@ -71,8 +71,11 @@ namespace DAMS.Controllers
         }
 
         // GET: Appointments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, int User_ID, string Choice)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            ViewBag.Choice = Choice;
             if (id == null)
             {
                 return NotFound();
@@ -116,7 +119,8 @@ namespace DAMS.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                TempData["SM_06"] = "Accepted a reservation request.";
+                return RedirectToAction(nameof(Layout_01), new { Doctor_ID = appointment.Doctor_ID });
             }
             return View(appointment);
         }
@@ -153,7 +157,7 @@ namespace DAMS.Controllers
             }
 
             await _context.SaveChangesAsync();
-            TempData["SM_04"] = "Successfully canceled a reservation request.";
+            TempData["SM_05"] = "Successfully canceled a reservation request.";
             return RedirectToAction(nameof(Layout), new { User_ID = appointment.Patient_ID });
         }
 
@@ -168,6 +172,30 @@ namespace DAMS.Controllers
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
             return View("~/Views/Users/Layout.cshtml");
+        }
+        public async Task<IActionResult> Layout_01(int Doctor_ID)
+        {
+            var Doctor = await _context.Doctor.Where(u => u.Doctor_ID == Doctor_ID).FirstOrDefaultAsync();
+            var Data = await _context.User.Where(u => u.User_ID == Doctor.User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("~/Views/Users/Layout.cshtml");
+        }
+        public async Task<IActionResult> Requests(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Doctor = await _context.Doctor.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
+            return View(await _context.Appointment.ToListAsync());
+        }
+        public async Task<IActionResult> History(int User_ID, string Choice)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Doctor = await _context.Doctor.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
+            ViewBag.Choice = Choice;
+            return View(await _context.Appointment.ToListAsync());
         }
     }
 }

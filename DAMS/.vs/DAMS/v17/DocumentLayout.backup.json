@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\appointments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:views\\appointments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\appointments\\requests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:views\\appointments\\requests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\appointments\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|solutionrelative:views\\appointments\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7DC19DA-1D1C-4357-A60A-EC61E177AACA}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAuwPoAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwPoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T17:54:54.716Z",
               "IsPinned": true,
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "Controllers\\DoctorsController.cs",
               "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\DoctorsController.cs",
               "RelativeToolTip": "Controllers\\DoctorsController.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAUwKQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAIwJwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T19:58:27.499Z",
               "IsPinned": true,
@@ -70,25 +70,11 @@
               "Title": "AppointmentsController.cs",
               "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AppointmentsController.cs",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
-              "RelativeToolTip": "Controllers\\AppointmentsController.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAYwHwAAABFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs*",
+              "RelativeToolTip": "Controllers\\AppointmentsController.cs*",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAHoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T11:29:45.786Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Appointment.cs",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Models\\Appointment.cs",
-              "RelativeDocumentMoniker": "Models\\Appointment.cs",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Models\\Appointment.cs",
-              "RelativeToolTip": "Models\\Appointment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T20:01:44.114Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -102,28 +88,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Appointments\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Appointments\\Delete.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAAA2AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Requests.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Requests.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Requests.cshtml",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Requests.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Requests.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-10T12:16:15.931Z",
+              "WhenOpened": "2024-11-10T14:52:35.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\History.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\History.cshtml",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\History.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\History.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-10T14:06:08.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAANYAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAAAGEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-10T12:00:17.707Z",
+              "WhenOpened": "2024-11-10T14:03:53.446Z",
               "EditorCaption": ""
             }
           ]
