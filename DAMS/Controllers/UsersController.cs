@@ -248,8 +248,8 @@ namespace DAMS.Controllers
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
             var Doctor = await _context.Doctor.Where(u => u.Doctor_ID == Doctor_ID).FirstOrDefaultAsync();
-            ViewBag.Data = Data;
-            return View();
+            ViewBag.Doctor = Doctor;
+            return View("~/Views/Appointments/Create.cshtml");
         }
     }
 }

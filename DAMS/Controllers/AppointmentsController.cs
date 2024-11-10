@@ -20,14 +20,18 @@ namespace DAMS.Controllers
         }
 
         // GET: Appointments
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             return View(await _context.Appointment.ToListAsync());
         }
 
         // GET: Appointments/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -60,7 +64,8 @@ namespace DAMS.Controllers
             {
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SM_04"] = "Successfully sent a reservation request.";
+                return RedirectToAction(nameof(Layout), new { User_ID = appointment.Patient_ID });
             }
             return View(appointment);
         }
@@ -117,8 +122,10 @@ namespace DAMS.Controllers
         }
 
         // GET: Appointments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -146,12 +153,21 @@ namespace DAMS.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            TempData["SM_04"] = "Successfully canceled a reservation request.";
+            return RedirectToAction(nameof(Layout), new { User_ID = appointment.Patient_ID });
         }
 
         private bool AppointmentExists(int id)
         {
             return _context.Appointment.Any(e => e.Appointment_ID == id);
+        }
+
+        // Custom built-in functions
+        public async Task<IActionResult> Layout(int User_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("~/Views/Users/Layout.cshtml");
         }
     }
 }
