@@ -39,9 +39,12 @@
                 <span asp-validation-for="Study_Field" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Availability" class="control-label"></label>
-                <input asp-for="Availability" class="form-control" />
-                <span asp-validation-for="Availability" class="text-danger"></span>
+                <select asp-for="Availability" class="form-control">
+                    <option value="">Select Your Availability</option>
+                    <option value="Offline">Offline</option>
+                    <option value="Online">Online</option>
+                    <option value="Offline & Online">Both</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Offline_Duration_Start" class="control-label"></label>

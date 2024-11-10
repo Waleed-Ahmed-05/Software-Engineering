@@ -13,5 +13,6 @@ namespace DAMS.Data
         public DbSet<DAMS.Models.User> User { get; set; } = default!;
         public DbSet<DAMS.Models.Doctor> Doctor { get; set; } = default!;
         public DbSet<DAMS.Models.Driver> Driver { get; set; } = default!;
+        public DbSet<DAMS.Models.Appointment> Appointment { get; set; } = default!;
     }
 }

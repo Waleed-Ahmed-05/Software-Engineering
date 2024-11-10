@@ -234,5 +234,22 @@ namespace DAMS.Controllers
             }
             return View("Layout");
         }
+        public async Task<IActionResult> Reserve_Appointment(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Doctors = await _context.Doctor.ToListAsync();
+            ViewBag.Doctor = Doctors;
+            return View("Appointments", await _context.User.ToListAsync());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Get_Appointment_ID(int User_ID, int Doctor_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Doctor = await _context.Doctor.Where(u => u.Doctor_ID == Doctor_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View();
+        }
     }
 }

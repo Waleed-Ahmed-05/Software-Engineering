@@ -125,3 +125,30 @@ body {
 .icon-container input {
     padding-left: 35px;
 }
+.border {
+    border: 2px solid #ccc
+}
+.border-radius {
+    border-radius: 20px
+}
+.width-1{
+    width: 100%;
+}
+.Gap-Bottom{
+    margin-bottom: 10px;
+}
+.font-size {
+    font-size: 1.5em;
+}
+.Gap-Left-4 {
+    margin-left: 120px;
+}
+.Gap-Top-1{
+    margin-top: 10px;
+}
+.Gap-Top-2{
+    margin-top: 260%;
+}
+.Gap-Left-5{
+    margin-left: 30%
+}

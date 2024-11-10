@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DAMS.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appointment_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appointment_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appointment_Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Appointment_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Appointment_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Appointment_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
