@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba8024461ac9dd928902a11e7b055ea31a965afc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e2a7c408a7f56f3487768f628bffa9728d2623e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DAMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

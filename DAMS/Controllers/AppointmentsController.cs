@@ -176,9 +176,10 @@ namespace DAMS.Controllers
         public async Task<IActionResult> Layout_01(int Doctor_ID)
         {
             var Doctor = await _context.Doctor.Where(u => u.Doctor_ID == Doctor_ID).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
             var Data = await _context.User.Where(u => u.User_ID == Doctor.User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
-            return View("~/Views/Users/Layout.cshtml");
+            return View("Requests", await _context.Appointment.ToListAsync());
         }
         public async Task<IActionResult> Requests(int id)
         {
