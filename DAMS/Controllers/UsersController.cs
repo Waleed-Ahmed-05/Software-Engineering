@@ -148,6 +148,18 @@ namespace DAMS.Controllers
             if (user != null)
             {
                 _context.User.Remove(user);
+                var appointment = await _context.Appointment.ToListAsync();
+                foreach (var Data in appointment)
+                {
+                    if (Data.Appointment_Status == "Pending" || Data.Appointment_Status == "Accepted")
+                    {
+                        var Data_01 = await _context.Appointment.FindAsync(Data.Appointment_ID);
+                        if (Data_01 != null)
+                        {
+                            _context.Appointment.Remove(Data_01);
+                        }
+                    }
+                }
             }
             if(user.Role == "Doctor")
             {
@@ -165,7 +177,6 @@ namespace DAMS.Controllers
                     _context.Driver.Remove(driver);
                 }
             }
-
             await _context.SaveChangesAsync();
             TempData["SM_01"] = "Account Deletion Successful.";
             return RedirectToAction(nameof(Login));
