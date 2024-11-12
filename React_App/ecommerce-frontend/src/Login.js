@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Login.css';
 import ProductList from './ProductList'; 
 
 function Login({ switchToSignup }) {
