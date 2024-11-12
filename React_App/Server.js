@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const User = require('./models/User');
-const Product = require('./models/Product');
 const AuthRoutes = require('./routes/auth');
 const ProductRoutes = require('./routes/products');
 const cors = require('cors');
@@ -11,10 +9,8 @@ const app = express();
 const PORT = 5000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/ecommerce', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('Database connected'))
+mongoose.connect('mongodb+srv://Admin:Admin@ecommerce.5pene.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce')
+.then(() => console.log('Database connected'))
   .catch(err => console.error('Database connection error:', err));
 
 // Middleware to parse JSON
