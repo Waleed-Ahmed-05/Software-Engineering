@@ -9,7 +9,7 @@ const app = express();
 const PORT = 5000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://Admin:Admin@ecommerce.5pene.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce')
+mongoose.connect('mongodb+srv://Admin:<Password>@ecommerce.5pene.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce')
 .then(() => console.log('Database connected'))
   .catch(err => console.error('Database connection error:', err));
 
