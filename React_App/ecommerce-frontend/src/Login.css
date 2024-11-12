@@ -1,0 +1,80 @@
+/* Center the login container on the page */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style input fields */
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Add focus effect to input fields */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the switch to signup button */
+button:not([type="submit"]) {
+    padding: 8px;
+    font-size: 14px;
+    color: #007bff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+button:not([type="submit"]):hover {
+    color: #0056b3;
+}
+
+/* Style the message text */
+p {
+    color: #d9534f; /* Red color for error messages */
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
