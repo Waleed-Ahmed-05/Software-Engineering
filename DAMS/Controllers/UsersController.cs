@@ -151,7 +151,7 @@ namespace DAMS.Controllers
                 var appointment = await _context.Appointment.ToListAsync();
                 foreach (var Data in appointment)
                 {
-                    if (Data.Appointment_Status == "Pending" || Data.Appointment_Status == "Accepted")
+                    if (Data.Appointment_Status != "Done" && user.User_ID == Data.Patient_ID)
                     {
                         var Data_01 = await _context.Appointment.FindAsync(Data.Appointment_ID);
                         if (Data_01 != null)
