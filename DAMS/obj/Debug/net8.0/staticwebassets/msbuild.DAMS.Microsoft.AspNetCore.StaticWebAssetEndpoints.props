@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/DAMS/DAMS.0n4vrx4nyr.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DAMS.0n4vrx4nyr.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0n4vrx4nyr"},{"Name":"integrity","Value":"sha256-PEhL5dniWPUGGSV\u002Bg/XqsNRydPRH9YcRpv0bvUJuS6k="},{"Name":"label","Value":"_content/DAMS/DAMS.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1122"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PEhL5dniWPUGGSV\u002Bg/XqsNRydPRH9YcRpv0bvUJuS6k=\u0022"},{"Name":"Last-Modified","Value":"Sat, 16 Nov 2024 08:47:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DAMS/DAMS.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DAMS.0n4vrx4nyr.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-PEhL5dniWPUGGSV\u002Bg/XqsNRydPRH9YcRpv0bvUJuS6k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1122"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PEhL5dniWPUGGSV\u002Bg/XqsNRydPRH9YcRpv0bvUJuS6k=\u0022"},{"Name":"Last-Modified","Value":"Sat, 16 Nov 2024 08:47:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

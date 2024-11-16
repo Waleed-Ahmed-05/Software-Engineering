@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DAMS.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DAMS.0n4vrx4nyr.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DAMS.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DAMS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DAMS.props",
+      "PackagePath": "build\\DAMS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DAMS.props",
+      "PackagePath": "buildMultiTargeting\\DAMS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DAMS.props",
+      "PackagePath": "buildTransitive\\DAMS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
