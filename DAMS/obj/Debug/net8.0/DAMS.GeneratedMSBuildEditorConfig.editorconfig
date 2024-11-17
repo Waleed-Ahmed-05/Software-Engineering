@@ -92,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Rides/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZXNcSGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Rides/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Users/Drivers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRHJpdmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,6 +134,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Users/Rides.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUmlkZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gangster's Paradise/Desktop/Study Material/SE/SE Project/DAMS/Views/Users/Signup.cshtml]

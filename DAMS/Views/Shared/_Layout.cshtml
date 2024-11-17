@@ -211,18 +211,21 @@ else if (Role == "Patient")
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-route-id="@User_ID" asp-action="Reserve_Appointment">Appointment Reservation</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-route-id="@User_ID" asp-action="Reserve_Ride">Ride Reservation</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">View Reservations</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Appointments" asp-action="Index" asp-route-User_ID="@User_ID">For Check-ups</a></li>
-                                    <li><a class="dropdown-item text-dark" asp-area="" asp-controller="" asp-action="" asp-route-User_ID="@User_ID">For Rides</a></li>
+                                    <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Rides" asp-action="Index" asp-route-User_ID="@User_ID">For Rides</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">View Reservation History</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Appointments" asp-action="History" asp-route-Choice="Patient" asp-route-User_ID="@User_ID">For Check-ups</a></li>
-                                    <li><a class="dropdown-item text-dark" asp-area="" asp-controller="" asp-action="" asp-route-User_ID="@User_ID">For Rides</a></li>
+                                    <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Rides" asp-action="History" asp-route-Choice="Patient" asp-route-User_ID="@User_ID">For Rides</a></li>
                                 </ul>
                             </li>
                         </ul>

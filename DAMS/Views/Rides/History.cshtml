@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DAMS.Models.Ride>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dropoff_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ride_Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (ViewBag.Choice == "Patient")
+{
+    @foreach (var item in Model)
+    {
+        if (item.Patient_ID == ViewBag.Data.User_ID && item.Ride_Status == "Done")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dropoff_Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ride_Status)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                </td>
+            </tr>
+        }
+        }
+}
+else if (ViewBag.Choice == "Patient")
+{
+    @foreach (var item in Model)
+    {
+        if (item.Driver_ID == ViewBag.Data.User_ID && item.Ride_Status == "Done")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dropoff_Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ride_Status)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                </td>
+            </tr>
+        }
+    }
+}
+    </tbody>
+</table>

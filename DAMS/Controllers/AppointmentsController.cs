@@ -157,7 +157,7 @@ namespace DAMS.Controllers
             }
 
             await _context.SaveChangesAsync();
-            TempData["SM_05"] = "Successfully canceled a reservation request.";
+            TempData["SM_07"] = "Successfully canceled a reservation request.";
             return RedirectToAction(nameof(Layout), new { User_ID = appointment.Patient_ID });
         }
 

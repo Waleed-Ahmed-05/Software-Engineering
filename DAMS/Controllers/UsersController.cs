@@ -262,5 +262,38 @@ namespace DAMS.Controllers
             ViewBag.Doctor = Doctor;
             return View("~/Views/Appointments/Create.cshtml");
         }
+        public async Task<IActionResult> Reserve_Ride(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Appointment = await _context.Appointment.Where(u => u.Patient_ID == id).Where(u => u.Appointment_Status == "Accepted").ToListAsync();
+            ViewBag.Appointment = Appointment;
+            var Doctor = await _context.Doctor.ToListAsync();
+            ViewBag.Doctor = Doctor;
+            return View("Rides", await _context.User.ToListAsync());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Get_Driver_ID(int User_ID, int Doctor_ID, int Appointment_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            ViewBag.Doctor_ID = Doctor_ID;
+            ViewBag.Appointment_ID = Appointment_ID;
+            var Driver = await _context.Driver.ToListAsync();
+            ViewBag.Driver = Driver;
+            return View("Drivers", await _context.User.ToListAsync());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Get_Ride_ID(int User_ID, int Doctor_ID, int Driver_ID, int Appointment_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Doctor = await _context.Doctor.Where(u => u.Doctor_ID == Doctor_ID).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
+            var Appointment = await _context.Appointment.Where(u => u.Appointment_ID == Appointment_ID).FirstOrDefaultAsync();
+            ViewBag.Appointment = Appointment;
+            ViewBag.Driver_ID = Driver_ID;
+            return View("~/Views/Rides/Create.cshtml");
+        }
     }
 }

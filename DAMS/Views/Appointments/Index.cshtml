@@ -49,11 +49,7 @@
         </td>
         <td>
             <a asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
-            @if (item.Appointment_Status == "Accept")
-            {
-                            
-            }
-            else if (item.Appointment_Status == "Pending")
+            @if (item.Appointment_Status == "Pending")
             {
                 <a asp-action="Delete" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Cancel</a>
             }

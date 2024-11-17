@@ -20,14 +20,18 @@ namespace DAMS.Controllers
         }
 
         // GET: Rides
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             return View(await _context.Ride.ToListAsync());
         }
 
         // GET: Rides/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -60,7 +64,8 @@ namespace DAMS.Controllers
             {
                 _context.Add(ride);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SM_04"] = "Successfully sent a reservation request.";
+                return RedirectToAction(nameof(Layout), new { User_ID = ride.Patient_ID });
             }
             return View(ride);
         }
@@ -117,8 +122,10 @@ namespace DAMS.Controllers
         }
 
         // GET: Rides/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -146,12 +153,30 @@ namespace DAMS.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            TempData["SM_07"] = "Successfully canceled a reservation request.";
+            return RedirectToAction(nameof(Layout), new { User_ID = ride.Patient_ID });
         }
 
         private bool RideExists(int id)
         {
             return _context.Ride.Any(e => e.Ride_ID == id);
+        }
+
+        // Custom built-in functions
+        public async Task<IActionResult> Layout(int User_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("~/Views/Users/Layout.cshtml");
+        }
+        public async Task<IActionResult> History(int User_ID, string Choice)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Driver = await _context.Driver.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Driver = Driver;
+            ViewBag.Choice = Choice;
+            return View(await _context.Ride.ToListAsync());
         }
     }
 }
