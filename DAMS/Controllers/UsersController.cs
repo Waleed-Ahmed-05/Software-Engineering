@@ -160,21 +160,21 @@ namespace DAMS.Controllers
                         }
                     }
                 }
-            }
-            if(user.Role == "Doctor")
-            {
-                var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
-                if (doctor != null)
+                if (user.Role == "Doctor")
                 {
-                    _context.Doctor.Remove(doctor);
+                    var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
+                    if (doctor != null)
+                    {
+                        _context.Doctor.Remove(doctor);
+                    }
                 }
-            }
-            else if(user.Role == "Driver")
-            {
-                var driver = await _context.Driver.FirstOrDefaultAsync(d => d.User_ID == id);
-                if (driver != null)
+                else if (user.Role == "Driver")
                 {
-                    _context.Driver.Remove(driver);
+                    var driver = await _context.Driver.FirstOrDefaultAsync(d => d.User_ID == id);
+                    if (driver != null)
+                    {
+                        _context.Driver.Remove(driver);
+                    }
                 }
             }
             await _context.SaveChangesAsync();
