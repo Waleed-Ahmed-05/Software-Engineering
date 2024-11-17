@@ -197,10 +197,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
       "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
@@ -227,10 +223,6 @@
     {
       "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
-    },
-    {
-      "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
       "Id": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\lib\\jquery\\dist\\jquery.js",

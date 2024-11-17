@@ -176,9 +176,9 @@ namespace DAMS.Controllers
                         _context.Driver.Remove(driver);
                     }
                 }
+                await _context.SaveChangesAsync();
+                TempData["SM_01"] = "Account Deletion Successful.";
             }
-            await _context.SaveChangesAsync();
-            TempData["SM_01"] = "Account Deletion Successful.";
             return RedirectToAction(nameof(Login));
         }
 
