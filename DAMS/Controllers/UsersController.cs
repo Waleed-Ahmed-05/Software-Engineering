@@ -160,6 +160,18 @@ namespace DAMS.Controllers
                         }
                     }
                 }
+                var ride = await _context.Ride.ToListAsync();
+                foreach (var Data in ride)
+                {
+                    if (Data.Ride_Status != "Done" && user.User_ID == Data.Patient_ID)
+                    {
+                        var Data_01 = await _context.Ride.FindAsync(Data.Ride_ID);
+                        if (Data_01 != null)
+                        {
+                            _context.Ride.Remove(Data_01);
+                        }
+                    }
+                }
                 if (user.Role == "Doctor")
                 {
                     var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);

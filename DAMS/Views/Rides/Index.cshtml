@@ -35,7 +35,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-    if (item.Patient_ID == ViewBag.Data.User_ID)
+    if (item.Patient_ID == ViewBag.Data.User_ID && item.Ride_Status != "Done")
     {
         <tr>
             <td>
