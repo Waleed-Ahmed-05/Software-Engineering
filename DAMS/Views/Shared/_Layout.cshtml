@@ -283,8 +283,11 @@ else if (Role == "Driver")
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <h4 class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">DrMS</h4>
+                                <a class="nav-link text-dark" asp-area="" asp-route-id="@User_ID" asp-controller="Rides" asp-action="Requests">View Reservation Requests</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Rides" asp-action="History" asp-route-Choice="Driver" asp-route-User_ID="@User_ID">View Reservation History</a>
+                                </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">

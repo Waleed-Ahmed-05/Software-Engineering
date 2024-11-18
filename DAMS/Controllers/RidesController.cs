@@ -71,8 +71,11 @@ namespace DAMS.Controllers
         }
 
         // GET: Rides/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, int User_ID, string Choice)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            ViewBag.Choice = Choice;
             if (id == null)
             {
                 return NotFound();
@@ -116,7 +119,8 @@ namespace DAMS.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                TempData["SM_06"] = "Accepted a reservation request.";
+                return RedirectToAction(nameof(Layout_01), new { Driver_ID = ride.Driver_ID});
             }
             return View(ride);
         }
@@ -177,6 +181,22 @@ namespace DAMS.Controllers
             ViewBag.Driver = Driver;
             ViewBag.Choice = Choice;
             return View(await _context.Ride.ToListAsync());
+        }
+        public async Task<IActionResult> Requests(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            var Driver = await _context.Driver.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Driver = Driver;
+            return View(await _context.Ride.ToListAsync());
+        }
+        public async Task<IActionResult> Layout_01(int Driver_ID)
+        {
+            var Driver = await _context.Driver.Where(u => u.Driver_ID == Driver_ID).FirstOrDefaultAsync();
+            ViewBag.Driver = Driver;
+            var Data = await _context.User.Where(u => u.User_ID == Driver.User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("Requests", await _context.Ride.ToListAsync());
         }
     }
 }

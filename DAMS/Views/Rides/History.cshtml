@@ -69,11 +69,11 @@
         }
         }
 }
-else if (ViewBag.Choice == "Patient")
+else if (ViewBag.Choice == "Driver")
 {
     @foreach (var item in Model)
     {
-        if (item.Driver_ID == ViewBag.Data.User_ID && item.Ride_Status == "Done")
+        if (item.Driver_ID == ViewBag.Driver.Driver_ID && item.Ride_Status == "Done")
         {
             <tr>
                 <td>

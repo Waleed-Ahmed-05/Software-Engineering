@@ -45,20 +45,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ride_Status" class="control-label"></label>
-                <input asp-for="Ride_Status" class="form-control" />
+                @if (ViewBag.Choice == "Accept")
+                {
+                    <input asp-for="Ride_Status" value="Accepted" class="form-control" />
+                }
+                else if (ViewBag.Choice == "Mark_As_Done")
+                {
+                    <input asp-for="Ride_Status" value="Done" class="form-control" />
+                }
                 <span asp-validation-for="Ride_Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" id="Auto" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+<script>
+    window.onload = function () {
+        document.getElementById("Auto").click();
+    };
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
