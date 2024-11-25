@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "next build && next export",
-    "dev": "next dev"
+    "dev": "next dev",
+    "deploy": "next build && next export && gh-pages -d out"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "react-dom": "^18.3.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
