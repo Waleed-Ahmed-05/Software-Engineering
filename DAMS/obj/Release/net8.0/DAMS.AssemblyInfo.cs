@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-DAMS-799f1bc9-7e9e-485b-ac95-d467b58561a8")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAMS")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f88c63ae8a72b0c6b0ed04e2f96f4a8cd6d81525")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAMS")]
