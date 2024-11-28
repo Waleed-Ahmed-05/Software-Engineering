@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6CB3AA8A-F504-42DD-AFFD-739C9ECBA0DE}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CB3AA8A-F504-42DD-AFFD-739C9ECBA0DE}|DAMS.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6CB3AA8A-F504-42DD-AFFD-739C9ECBA0DE}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\rides\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6CB3AA8A-F504-42DD-AFFD-739C9ECBA0DE}|DAMS.csproj|solutionrelative:views\\rides\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,23 +24,10 @@
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAIwKoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwE8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T09:22:06.076Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Rides\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Rides\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Rides\\Index.cshtml",
-              "RelativeToolTip": "Views\\Rides\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T16:50:25.249Z",
               "EditorCaption": ""
             }
           ]
