@@ -17,5 +17,7 @@ namespace DAMS.Data
         public DbSet<DAMS.Models.Appointment> Appointment { get; set; } = default!;
         public DbSet<DAMS.Models.Ride> Ride { get; set; } = default!;
         public DbSet<DAMS.Models.Medicine_Model_.Medicine> Medicine { get; set; } = default!;
+        public DbSet<DAMS.Models.Medicine_Model_.Price> Price { get; set; } = default!;
+        public DbSet<DAMS.Models.Medicine_Model_.Weightage> Weightage { get; set; } = default!;
     }
 }

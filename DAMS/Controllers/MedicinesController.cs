@@ -153,5 +153,18 @@ namespace DAMS.Controllers
         {
             return _context.Medicine.Any(e => e.Medicine_ID == id);
         }
+
+        // Custom Built-in Functions
+
+        public async Task<IActionResult> Validate(int id)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View();
+        }
+        public async Task<IActionResult> Validation()
+        {
+            return Content("");
+        }
     }
 }
