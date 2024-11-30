@@ -1,0 +1,78 @@
+﻿@model DAMS.Models.Doctor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>HI </h1>
+
+<h4>Doctor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Doctors" asp-route-id="@ViewBag.Data_01.Doctor_ID" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Doctor_ID" />
+            <div class="form-group" hidden>
+                <label asp-for="User_ID" class="control-label"></label>
+                <input asp-for="User_ID" class="form-control" />
+                <span asp-validation-for="User_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clinic_Name" class="control-label"></label>
+                <input asp-for="Clinic_Name" class="form-control" />
+                <span asp-validation-for="Clinic_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Certification" class="control-label"></label>
+                <input asp-for="Certification" class="form-control" />
+                <span asp-validation-for="Certification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Study_Field" class="control-label"></label>
+                <input asp-for="Study_Field" class="form-control" />
+                <span asp-validation-for="Study_Field" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="Availability" class="form-control">
+                    <option value="">Select Your Availability</option>
+                    <option value="Offline">Offline</option>
+                    <option value="Online">Online</option>
+                    <option value="Offline & Online">Both</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offline_Duration_Start" class="control-label"></label>
+                <input asp-for="Offline_Duration_Start" class="form-control" />
+                <span asp-validation-for="Offline_Duration_Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offline_Duration_End" class="control-label"></label>
+                <input asp-for="Offline_Duration_End" class="form-control" />
+                <span asp-validation-for="Offline_Duration_End" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Online_Duration_Start" class="control-label"></label>
+                <input asp-for="Online_Duration_Start" class="form-control" />
+                <span asp-validation-for="Online_Duration_Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Online_Duration_End" class="control-label"></label>
+                <input asp-for="Online_Duration_End" class="form-control" />
+                <span asp-validation-for="Online_Duration_End" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Confirm" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

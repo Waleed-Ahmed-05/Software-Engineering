@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DAMS.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    if (ViewBag.Data.User_ID == item.Patient_ID && item.Appointment_Status != "Done")
+    {
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctor_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointment_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointment_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointment_Status)
+        </td>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+            @if (item.Appointment_Status == "Pending")
+            {
+                <a asp-action="Delete" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Cancel</a>
+            }
+        </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

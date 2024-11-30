@@ -1,0 +1,59 @@
+﻿@model DAMS.Models.Ride
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ride</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Rides" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="Driver_ID" class="control-label"></label>
+                <input asp-for="Driver_ID" class="form-control" />
+                <span asp-validation-for="Driver_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Patient_ID" class="control-label"></label>
+                <input asp-for="Patient_ID" value="@ViewBag.Data.User_ID" class="form-control" />
+                <span asp-validation-for="Patient_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Location" class="control-label"></label>
+                <input asp-for="Pickup_Location" class="form-control" />
+                <span asp-validation-for="Pickup_Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dropoff_Location" class="control-label"></label>
+                <input asp-for="Dropoff_Location" value="@ViewBag.Doctor.Location" class="form-control" />
+                <span asp-validation-for="Dropoff_Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Time" class="control-label"></label>
+                <input asp-for="Pickup_Time" value="@ViewBag.Appointment.Appointment_Time" class="form-control" />
+                <span asp-validation-for="Pickup_Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Date" class="control-label"></label>
+                <input asp-for="Pickup_Date" value="@ViewBag.Appointment.Appointment_Date" class="form-control" />
+                <span asp-validation-for="Pickup_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Ride_Status" class="control-label"></label>
+                <input asp-for="Ride_Status" value="Pending" class="form-control" />
+                <span asp-validation-for="Ride_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

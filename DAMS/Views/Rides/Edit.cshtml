@@ -1,0 +1,72 @@
+﻿@model DAMS.Models.Ride
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Ride</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ride_ID" />
+            <div class="form-group">
+                <label asp-for="Driver_ID" class="control-label"></label>
+                <input asp-for="Driver_ID" class="form-control" />
+                <span asp-validation-for="Driver_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient_ID" class="control-label"></label>
+                <input asp-for="Patient_ID" class="form-control" />
+                <span asp-validation-for="Patient_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Location" class="control-label"></label>
+                <input asp-for="Pickup_Location" class="form-control" />
+                <span asp-validation-for="Pickup_Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dropoff_Location" class="control-label"></label>
+                <input asp-for="Dropoff_Location" class="form-control" />
+                <span asp-validation-for="Dropoff_Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Time" class="control-label"></label>
+                <input asp-for="Pickup_Time" class="form-control" />
+                <span asp-validation-for="Pickup_Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Date" class="control-label"></label>
+                <input asp-for="Pickup_Date" class="form-control" />
+                <span asp-validation-for="Pickup_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ride_Status" class="control-label"></label>
+                @if (ViewBag.Choice == "Accept")
+                {
+                    <input asp-for="Ride_Status" value="Accepted" class="form-control" />
+                }
+                else if (ViewBag.Choice == "Mark_As_Done")
+                {
+                    <input asp-for="Ride_Status" value="Done" class="form-control" />
+                }
+                <span asp-validation-for="Ride_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="Auto" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        document.getElementById("Auto").click();
+    };
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
