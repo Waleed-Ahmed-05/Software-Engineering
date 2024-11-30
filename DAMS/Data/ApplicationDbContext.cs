@@ -19,5 +19,6 @@ namespace DAMS.Data
         public DbSet<DAMS.Models.Medicine_Model_.Medicine> Medicine { get; set; } = default!;
         public DbSet<DAMS.Models.Medicine_Model_.Price> Price { get; set; } = default!;
         public DbSet<DAMS.Models.Medicine_Model_.Weightage> Weightage { get; set; } = default!;
+        public DbSet<DAMS.Models.Medicine_Model_.Sell> Sell { get; set; } = default!;
     }
 }
