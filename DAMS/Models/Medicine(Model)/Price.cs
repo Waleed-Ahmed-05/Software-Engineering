@@ -7,6 +7,6 @@ namespace DAMS.Models.Medicine_Model_
         [Key]
         public int Price_ID { get; set; }
         [Required]
-        public string Medicine_Price {  get; set; }
+        public float Medicine_Price {  get; set; }
     }
 }

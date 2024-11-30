@@ -1,10 +1,10 @@
 ﻿@model DAMS.Models.Medicine_Model_.Medicine
 
-<h4>Medicine</h4>
+<h4>Medicine @ViewBag.Data.User_ID</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Validation">
+        <form asp-route-User_ID="@ViewBag.Data.User_ID" asp-action="Validation">
             <div class="form-group">
                 <label asp-for="Medicine_Name" class="control-label"></label>
                 <input asp-for="Medicine_Name" class="form-control" />
@@ -21,14 +21,12 @@
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label for="Medicine_Weightage" class="control-label">Medicine_Weightage</label>
-                <input for="Medicine_Weightage" class="form-control" />
-                <span validation-for="Medicine_Weightage" class="text-danger"></span>
+                <label class="control-label">Medicine_Weightage</label>
+                <input name="Medicine_Weightage" class="form-control" />
             </div>
             <div class="form-group">
-                <label for="Medicine_Price" class="control-label">Medicine_Price</label>
-                <input for="Medicine_Price" class="form-control" />
-                <span validation-for="Medicine_Price" class="text-danger"></span>
+                <label class="control-label">Medicine_Price</label>
+                <input name="Medicine_Price" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

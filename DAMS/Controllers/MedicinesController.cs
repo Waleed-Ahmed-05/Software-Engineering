@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAMS.Data;
 using DAMS.Models.Medicine_Model_;
+using DAMS.Models;
 
 namespace DAMS.Controllers
 {
@@ -54,13 +55,14 @@ namespace DAMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Medicine_ID,Medicine_Name,Medicine_Description,Category,Weightage_ID,Price_ID")] Medicine medicine)
+        public async Task<IActionResult> Create([Bind("Medicine_ID,Medicine_Name,Medicine_Description,Category,Weightage_ID,Price_ID")] Medicine medicine, int User_ID)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(medicine);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SM_08"] = "Successfully added a new medicine.";
+                return RedirectToAction(nameof(Layout), new { User_ID = User_ID });
             }
             return View(medicine);
         }
@@ -155,16 +157,60 @@ namespace DAMS.Controllers
         }
 
         // Custom Built-in Functions
-
         public async Task<IActionResult> Validate(int id)
         {
             var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
             ViewBag.Data = Data;
             return View();
         }
-        public async Task<IActionResult> Validation()
+        public async Task<IActionResult> Validation([Bind("Price_ID", "Medicine_Price")] Price price, [Bind("Weightage_ID", "Medicine_Weightage")] Weightage weightage, int User_ID, string Medicine_Name, string Medicine_Description, string Category, int Medicine_Weightage, float Medicine_Price)
         {
-            return Content("");
+            bool Availability = false;
+            var Medicines = await _context.Medicine.ToListAsync();
+            var Weightage = await _context.Weightage.Where(u => u.Medicine_Weightage == Medicine_Weightage).FirstOrDefaultAsync();
+            var Price = await _context.Price.Where(u => u.Medicine_Price == Medicine_Price).FirstOrDefaultAsync();
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            if (Weightage != null && Price != null)
+            {
+                foreach (var Medicine in Medicines)
+                {
+                    if (Medicine.Medicine_Name == Medicine_Name && Medicine.Weightage_ID == Weightage.Weightage_ID && Medicine.Price_ID == Price.Price_ID)
+                    {
+                        Availability = true;
+                    }
+                }
+            }
+            if (!Availability)
+            {
+                if (Weightage == null)
+                {
+                    _context.Add(weightage);
+                    await _context.SaveChangesAsync();
+                    Weightage = await _context.Weightage.Where(u => u.Medicine_Weightage == Medicine_Weightage).FirstOrDefaultAsync();
+                }
+                if (Price == null)
+                {
+                    _context.Add(price);
+                    await _context.SaveChangesAsync();
+                    Price = await _context.Price.Where(u => u.Medicine_Price == Medicine_Price).FirstOrDefaultAsync();
+                }
+                ViewBag.User_ID = User_ID;
+                ViewBag.Medicine_Name = Medicine_Name;
+                ViewBag.Medicine_Description = Medicine_Description;
+                ViewBag.Category = Category;
+                ViewBag.Price_ID = Price.Price_ID;
+                ViewBag.Weightage_ID = Weightage.Weightage_ID;
+                return View("Create");
+            }
+            TempData["SM_09"] = "A medicine with the same details already exists.";
+            return RedirectToAction(nameof(Layout), new { User_ID = User_ID });
+        }
+        public async Task<IActionResult> Layout(int User_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("~/Views/Users/Layout.cshtml");
         }
     }
 }

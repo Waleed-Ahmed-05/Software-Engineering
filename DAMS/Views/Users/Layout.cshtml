@@ -62,11 +62,36 @@
             document.getElementById('popup').style.display = 'none';
         }, 3000);
     </script>
-}@if (TempData["SM_07"] != null)
+}
+@if (TempData["SM_07"] != null)
 
 {
     <div class="alert alert-success" id="popup">
         @TempData["SM_07"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_08"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_08"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_09"] != null)
+
+{
+    <div class="alert alert-danger" id="popup">
+        @TempData["SM_09"]
     </div>
     <script>
         setTimeout(function () {

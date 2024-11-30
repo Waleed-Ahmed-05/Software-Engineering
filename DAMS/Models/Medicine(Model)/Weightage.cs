@@ -8,6 +8,6 @@ namespace DAMS.Models.Medicine_Model_
         [Key]
         public int Weightage_ID { get; set; }
         [Required]
-        public string Medicine_Weightage {  get; set; }
+        public int Medicine_Weightage {  get; set; }
     }
 }
