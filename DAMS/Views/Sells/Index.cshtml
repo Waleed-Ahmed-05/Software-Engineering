@@ -6,9 +6,6 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -29,6 +26,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    if (ViewBag.Data.User_ID == item.Seller_ID)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Medicine_ID)
@@ -43,11 +42,11 @@
                 @Html.DisplayFor(modelItem => item.Medicine_Price)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Selling_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Selling_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Selling_ID">Delete</a>
+                <a asp-action="Edit" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Edit</a> |
+                <a asp-action="Delete" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Delete</a>
             </td>
         </tr>
+    }
 }
     </tbody>
 </table>

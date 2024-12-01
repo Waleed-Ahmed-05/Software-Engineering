@@ -172,6 +172,18 @@ namespace DAMS.Controllers
                         }
                     }
                 }
+                var  sell = await _context.Sell.ToListAsync();
+                foreach (var Data in sell)
+                {
+                    if (Data.Seller_ID == user.User_ID)
+                    {
+                        var Data_01 = await _context.Sell.FindAsync(Data.Selling_ID);
+                        if (Data_01 != null)
+                        {
+                            _context.Sell.Remove(Data_01);
+                        }
+                    }
+                }
                 if (user.Role == "Doctor")
                 {
                     var doctor = await _context.Doctor.FirstOrDefaultAsync(d => d.User_ID == id);
@@ -186,6 +198,14 @@ namespace DAMS.Controllers
                     if (driver != null)
                     {
                         _context.Driver.Remove(driver);
+                    }
+                }
+                else if (user.Role == "Pharmacologist")
+                {
+                    var pharmacologist = await _context.User.FirstOrDefaultAsync(d => d.User_ID == id);
+                    if (pharmacologist != null)
+                    {
+                        _context.User.Remove(pharmacologist);
                     }
                 }
                 await _context.SaveChangesAsync();

@@ -15,29 +15,12 @@
 
 <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 100vh;">
     <h1 style="margin-bottom: 20px;">Search Your Desired Medicine</h1>
-    <div style="border: 2px solid #ccc;border-radius: 20px; padding: 20px; width: 80%; max-width: 400px;">
-        <form asp-action="Search_01">
-            <br>
+    <div style="border: 2px solid #ccc;border-radius: 20px; padding: 20px; width: 80%; max-width: 500px;">
+        <form asp-route-User_ID="@ViewBag.Data.User_ID" asp-action="Search_01">
             <div class="form-group" style="display: flex; justify-content: space-between;">
                 <input name="User_ID" value="@ViewBag.Data.User_ID" hidden />
-                <select name="Medicine_Name" class="form-control" style="width: 50%; margin-right: 10px;" required>
-                    <option value="">Medicine_Name</option>
-                    @foreach (var Data in ViewBag.Medicine_Name)
-                    {
-                            <option value="@Data">@Data</option>
-                    }
-                </select>
-                <select name="Departure" class="form-control" style="width: 50%;" required>
-                    <option value="">Medicine_Weightage</option>
-                    @foreach (var Data in ViewBag.Medicine_Weightage)
-                    {
-                        <option value="@Data">@Data</option>
-                    }
-                </select>
-            </div>
-            <br>
-            <div class="form-group" style="display: flex; justify-content: center;">
-                <input type="submit" value="Search" class="btn btn-primary" style="margin-right: 15px;" />
+                <input name="Medicine_Name" style="width: 60%;border-radius: 5px;" placeholder="Enter Medicine Name to Search"/>
+                <input type="submit" value="Search" class="btn btn-primary" style="margin-right: 10px;" />
                 <input type="reset" value="Reset" class="btn btn-primary" />
             </div>
         </form>

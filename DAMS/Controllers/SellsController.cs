@@ -20,8 +20,10 @@ namespace DAMS.Controllers
         }
 
         // GET: Sells
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
+            var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             return View(await _context.Sell.ToListAsync());
         }
 
@@ -56,18 +58,37 @@ namespace DAMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Selling_ID,Medicine_ID,Seller_ID,Quantity,Medicine_Price")] Sell sell)
         {
-            if (ModelState.IsValid)
+            bool Availability = false;
+            var Sells = _context.Sell.ToList();
+            foreach (var Sell in Sells)
             {
-                _context.Add(sell);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (sell.Medicine_ID == Sell.Medicine_ID && sell.Seller_ID == Sell.Seller_ID)
+                {
+                    Availability = true;
+                }
             }
-            return View(sell);
+
+            if (!Availability)
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Add(sell);
+                    await _context.SaveChangesAsync();
+                    TempData["SM_10"] = "Successfully added a new medicine in selling category.";
+                }
+            }
+            else
+            {
+                TempData["DM_02"] = "A medicine with same details already exists in selling category.";
+            }
+            return RedirectToAction(nameof(Layout), new { User_ID = sell.Seller_ID });
         }
 
         // GET: Sells/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -111,14 +132,17 @@ namespace DAMS.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                TempData["SM_11"] = "Successfully changed medcicine details in selling category.";
+                return RedirectToAction(nameof(Layout), new { User_ID = sell.Seller_ID });
             }
             return View(sell);
         }
 
         // GET: Sells/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int User_ID)
         {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
             if (id == null)
             {
                 return NotFound();
@@ -146,7 +170,8 @@ namespace DAMS.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            TempData["SM_12"] = "Successfully removed a medcicine from selling category.";
+            return RedirectToAction(nameof(Layout), new { User_ID = sell.Seller_ID });
         }
 
         private bool SellExists(int id)
@@ -159,21 +184,38 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == id).FirstOrDefaultAsync();
             ViewBag.Data = Data;
-            var data = _context.Medicine.ToList();
-            ViewBag.Medicine_Name = data.Select(f => f.Medicine_Name).Distinct().ToList();
-            ViewBag.Medicine_Weightage = data.Select(f => f.Medicine_Weightage).Distinct().ToList();
             return View();
         }
-        public async Task<IActionResult> Search_01(int User_ID, string Medicine_Name, int Medicine_Weightage)
+        public async Task<IActionResult> Search_01(int User_ID, string Medicine_Name)
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
-            var Medicines = await _context.Medicine.Where(u => u.Medicine_Name.Contains(Medicine_Name)).ToListAsync();
-            if (Medicines == null)
+            if (Medicine_Name != null)
             {
-                TempData["DM_03"] = "No medicines Found";
+                var Medicines = await _context.Medicine.Where(u => u.Medicine_Name.Contains(Medicine_Name)).ToListAsync();
+                ViewBag.Medicines = Medicines;
+                if (Medicines == null || !Medicines.Any())
+                {
+                    TempData["DM_03"] = "No medicines Found";
+                    ViewBag.Medicines = null;
+                    return View("Search");
+                }
             }
-            return RedirectToAction("Search", new { id = User_ID });
+            return View("Medicines");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Get_Sell_ID (int User_ID, int Medicine_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            ViewBag.Seller_ID = User_ID;
+            return View("Create");
+        }
+        public async Task<IActionResult> Layout(int User_ID)
+        {
+            var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
+            ViewBag.Data = Data;
+            return View("~/Views/Users/Layout.cshtml");
         }
     }
 }

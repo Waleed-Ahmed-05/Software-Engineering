@@ -99,6 +99,42 @@
         }, 3000);
     </script>
 }
+@if (TempData["SM_10"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_10"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_11"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_11"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_12"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_12"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
 @if (TempData["DM_02"] != null)
 
 {
