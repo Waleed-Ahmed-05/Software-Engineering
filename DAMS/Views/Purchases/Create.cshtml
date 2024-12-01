@@ -1,0 +1,54 @@
+﻿@model DAMS.Models.Purchase
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Purchase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="Selling_ID" class="control-label"></label>
+                <input asp-for="Selling_ID" class="form-control" />
+                <span asp-validation-for="Selling_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Patient_ID" class="control-label"></label>
+                <input asp-for="Patient_ID" value="@ViewBag.Data.User_ID" class="form-control" />
+                <span asp-validation-for="Patient_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requested_Quantity" class="control-label"></label>
+                <input asp-for="Requested_Quantity" class="form-control" />
+                <span asp-validation-for="Requested_Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Request_Status" class="control-label"></label>
+                <input asp-for="Request_Status" value="Pending" class="form-control" />
+                <span asp-validation-for="Request_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Delivery_Date" class="control-label"></label>
+                <input asp-for="Delivery_Date" type="date" class="form-control" />
+                <span asp-validation-for="Delivery_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Delivery_Time" class="control-label"></label>
+                <input asp-for="Delivery_Time" type="time" class="form-control" />
+                <span asp-validation-for="Delivery_Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

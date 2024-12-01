@@ -106,6 +106,12 @@ else if (Role == "Doctor")
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Sells" asp-route-id="@User_ID" asp-action="Index">View Selling Medicine</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Doctor" asp-route-id="@User_ID" asp-action="Index">View Medicine Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Doctor" asp-route-id="@User_ID" asp-action="History">Order History</a>
+                            </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
@@ -179,6 +185,15 @@ else if (Role == "Patient")
                                     <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Appointments" asp-action="History" asp-route-Choice="Patient" asp-route-User_ID="@User_ID">For Check-ups</a></li>
                                     <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Rides" asp-action="History" asp-route-Choice="Patient" asp-route-User_ID="@User_ID">For Rides</a></li>
                                 </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-id="@User_ID" asp-action="Search">Order Medicine</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Patient" asp-route-id="@User_ID" asp-action="Index">View Medicine Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Patient" asp-route-id="@User_ID" asp-action="History">Order History</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
@@ -302,6 +317,12 @@ else if (Role == "Pharmacologist")
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Sells" asp-route-id="@User_ID" asp-action="Index">View Selling Medicine</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Doctor" asp-route-id="@User_ID" asp-action="Index">View Medicine Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purchases" asp-route-Choice="Doctor" asp-route-id="@User_ID" asp-action="History">Order History</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">

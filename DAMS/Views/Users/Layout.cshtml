@@ -135,6 +135,42 @@
         }, 3000);
     </script>
 }
+@if (TempData["SM_13"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_13"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_14"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_14"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+@if (TempData["SM_15"] != null)
+
+{
+    <div class="alert alert-success" id="popup">
+        @TempData["SM_15"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
 @if (TempData["DM_02"] != null)
 
 {

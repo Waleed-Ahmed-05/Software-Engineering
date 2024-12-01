@@ -1,0 +1,102 @@
+﻿@model IEnumerable<DAMS.Models.Purchase>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Selling_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Requested_Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Request_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Delivery_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Delivery_Time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Choice == "Patient")
+        {
+            @foreach (var item in Model)
+            {
+                if (item.Patient_ID == ViewBag.Data.User_ID && item.Request_Status == "Done")
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Selling_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Patient_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Requested_Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Request_Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Delivery_Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Delivery_Time)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+        else if (ViewBag.Choice == "Doctor")
+        {
+            @foreach (var item in Model)
+            {
+                foreach (var Sell in ViewBag.Sell)
+                {
+                    if (item.Selling_ID == Sell.Selling_ID && Sell.Seller_ID == ViewBag.Data.User_ID && item.Request_Status == "Done")
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Selling_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Patient_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Requested_Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Request_Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Delivery_Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Delivery_Time)
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@if (ViewBag.Medicines != null)
+{
+    foreach (var Medicine in ViewBag.Medicines)
+    {
+        <div class="display border border-radius width-1 Gap-Bottom" style="overflow: hidden">
+            <pre>
+            <h3 class="Gap-Left-4 Gap-Top-1"><b>Medicine Details</b></h3>
+                <span class="font-size"><b>@Html.Raw("Name:")</b> @Html.Raw(Medicine.Medicine_Name)</span>
+                <span class="font-size"><b>@Html.Raw("Description:")</b> @Html.Raw(Medicine.Medicine_Description)</span>
+                <span class="font-size"><b>@Html.Raw("Category:")</b> @Html.Raw(Medicine.Category)</span>
+                <span class="font-size"><b>@Html.Raw("Weighatge:")</b> @Html.Raw(Medicine.Medicine_Weightage)</span>
+            </pre>
+            @using (Html.BeginForm("Get_Sell_ID", "Purchases", FormMethod.Post))
+            {
+                <input type="hidden" name="User_ID" value="@ViewBag.Data.User_ID" />
+                <input type="hidden" name="Medicine_ID" value="@Medicine.Medicine_ID" />
+                <input type="submit" value="Select" class="btn btn-primary Gap-Top-2 Gap-Left-5" />
+            }
+        </div>
+    }
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

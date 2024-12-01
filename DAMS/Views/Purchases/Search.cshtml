@@ -1,0 +1,34 @@
+﻿@if (TempData["DM_04"] != null)
+
+{
+    <div class="alert alert-danger" id="popup">
+        @TempData["DM_04"]
+    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'none';
+        }, 3000);
+    </script>
+}
+
+@model DAMS.Models.Sell
+
+<div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 100vh;">
+    <h1 style="margin-bottom: 20px;">Search Your Desired Medicine</h1>
+    <div style="border: 2px solid #ccc;border-radius: 20px; padding: 20px; width: 80%; max-width: 500px;">
+        <form asp-route-User_ID="@ViewBag.Data.User_ID" asp-action="Search_01">
+            <div class="form-group" style="display: flex; justify-content: space-between;">
+                <input name="User_ID" value="@ViewBag.Data.User_ID" hidden />
+                <input name="Medicine_Name" style="width: 60%;border-radius: 5px;" placeholder="Enter Medicine Name to Search"/>
+                <input type="submit" value="Search" class="btn btn-primary" style="margin-right: 10px;" />
+                <input type="reset" value="Reset" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -172,7 +172,33 @@ namespace DAMS.Controllers
                         }
                     }
                 }
-                var  sell = await _context.Sell.ToListAsync();
+                var sell = await _context.Sell.ToListAsync();
+                var purchase = await _context.Purchase.ToListAsync();
+                foreach (var Data in purchase)
+                {
+                    foreach (var Data_01 in sell)
+                    {
+                        if (Data.Selling_ID == Data_01.Selling_ID && Data.Patient_ID == user.User_ID && Data.Request_Status != "Done")
+                        {
+                            var Data_02 = await _context.Purchase.FindAsync(Data.Purchase_ID);
+                            if (Data_02 != null)
+                            {
+                                _context.Purchase.Remove(Data_02);
+                            }
+                        }
+                    }
+                }
+                foreach (var Data in sell)
+                {
+                    if (Data.Seller_ID == user.User_ID)
+                    {
+                        var Data_01 = await _context.Sell.FindAsync(Data.Selling_ID);
+                        if (Data_01 != null)
+                        {
+                            _context.Sell.Remove(Data_01);
+                        }
+                    }
+                }
                 foreach (var Data in sell)
                 {
                     if (Data.Seller_ID == user.User_ID)

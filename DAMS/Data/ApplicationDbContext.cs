@@ -17,5 +17,6 @@ namespace DAMS.Data
         public DbSet<DAMS.Models.Ride> Ride { get; set; } = default!;
         public DbSet<DAMS.Models.Sell> Sell { get; set; } = default!;
         public DbSet<DAMS.Models.User> User { get; set; } = default!;
+        public DbSet<DAMS.Models.Purchase> Purchase { get; set; } = default!;
     }
 }
