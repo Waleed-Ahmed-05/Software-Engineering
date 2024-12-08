@@ -4,12 +4,12 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>HI </h1>
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<h4>Doctor</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1>You can edit your additional details here.</h1>
+<hr>
+<div>
+    <div>
         <form asp-controller="Doctors" asp-route-id="@ViewBag.Data_01.Doctor_ID" asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Doctor_ID" />
@@ -18,56 +18,43 @@
                 <input asp-for="User_ID" class="form-control" />
                 <span asp-validation-for="User_ID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Clinic_Name" class="control-label"></label>
-                <input asp-for="Clinic_Name" class="form-control" />
-                <span asp-validation-for="Clinic_Name" class="text-danger"></span>
+            <div class="form-group display Gap-Bottom">
+                <input asp-for="Clinic_Name" class="form-control Gap width" placeholder="Clinic Name" />
+                <input asp-for="Location" class="form-control width" placeholder="Enter you current location" />
             </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
+            <div class="form-group display Gap-Bottom">
+                <input asp-for="Certification" class="form-control width Gap" placeholder="Provide Your Certification" />
+                <input asp-for="Study_Field" class="form-control width" placeholder="Enter Your Field of Study" />
             </div>
+            <h2>Enter Your Availability Details</h2>
+            <hr>
             <div class="form-group">
-                <label asp-for="Certification" class="control-label"></label>
-                <input asp-for="Certification" class="form-control" />
-                <span asp-validation-for="Certification" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Study_Field" class="control-label"></label>
-                <input asp-for="Study_Field" class="form-control" />
-                <span asp-validation-for="Study_Field" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <select asp-for="Availability" class="form-control">
+                <select asp-for="Availability" class="form-control width Gap-Bottom">
                     <option value="">Select Your Availability</option>
                     <option value="Offline">Offline</option>
                     <option value="Online">Online</option>
                     <option value="Offline & Online">Both</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label asp-for="Offline_Duration_Start" class="control-label"></label>
-                <input asp-for="Offline_Duration_Start" class="form-control" />
-                <span asp-validation-for="Offline_Duration_Start" class="text-danger"></span>
+            <h3>Offline Availability Timings</h3>
+            <hr>
+            <div class="form-group display">
+                <label class="Gap-2 Gap-Top">Start</label>
+                <input type="time" asp-for="Offline_Duration_Start" class="form-control width Gap" />
+                <label class="Gap-2 Gap-Top">End</label>
+                <input type="time" asp-for="Offline_Duration_End" class="form-control width Gap" />
             </div>
-            <div class="form-group">
-                <label asp-for="Offline_Duration_End" class="control-label"></label>
-                <input asp-for="Offline_Duration_End" class="form-control" />
-                <span asp-validation-for="Offline_Duration_End" class="text-danger"></span>
+            <br>
+            <h3>Online Availability Timings</h3>
+            <hr>
+            <div class="form-group display Gap-Bottom">
+                <label class="Gap-2 Gap-Top">Start</label>
+                <input type="time" asp-for="Online_Duration_Start" class="form-control width Gap" />
+                <label class="Gap-2 Gap-Top">End</label>
+                <input type="time" asp-for="Online_Duration_End" class="form-control width Gap" />
             </div>
-            <div class="form-group">
-                <label asp-for="Online_Duration_Start" class="control-label"></label>
-                <input asp-for="Online_Duration_Start" class="form-control" />
-                <span asp-validation-for="Online_Duration_Start" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Online_Duration_End" class="control-label"></label>
-                <input asp-for="Online_Duration_End" class="form-control" />
-                <span asp-validation-for="Online_Duration_End" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Confirm" class="btn btn-primary" />
+            <div class="form-group Gap-Left-2">
+                <input type="submit" value="Confirm" class="btn btn-success" />
             </div>
         </form>
     </div>
