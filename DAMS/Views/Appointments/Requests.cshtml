@@ -49,14 +49,14 @@
                 @Html.DisplayFor(modelItem => item.Appointment_Status)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
                 @if (item.Appointment_Status == "Pending")
                 {
-                    <a asp-action="Edit" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Accept">Accept</a>
+                    <a  class="btn btn-success" asp-action="Edit" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Accept">Accept</a>
                 }
                 else if (item.Appointment_Status == "Accepted")
                 {
-                    <a asp-action="Edit" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Mark_As_Done">Mark as Done</a>
+                    <a  class="btn btn-success" asp-action="Edit" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Mark_As_Done">Mark as Done</a>
                 }
             </td>
         </tr>

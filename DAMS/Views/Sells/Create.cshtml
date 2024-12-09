@@ -4,12 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Sell</h4>
+<h2>Please add quantity of the medicine available and it's weighatge.</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div>
+    <div>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" hidden>
@@ -22,18 +20,14 @@
                 <input asp-for="Seller_ID" value="@ViewBag.Seller_ID" class="form-control" />
                 <span asp-validation-for="Seller_ID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
+            <div class="form-group display Gap-Bottom">
+                <label class="Gap-2 Gap-Top">Quantity</label>
+                <input asp-for="Quantity" class="form-control width Gap" />
+                <label class="Gap-2 Gap-Top">Price</label>
+                <input asp-for="Medicine_Price" class="form-control width" />
             </div>
             <div class="form-group">
-                <label asp-for="Medicine_Price" class="control-label"></label>
-                <input asp-for="Medicine_Price" class="form-control" />
-                <span asp-validation-for="Medicine_Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </form>
     </div>

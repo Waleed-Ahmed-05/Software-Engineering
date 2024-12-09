@@ -4,17 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Your are currently viewing your current pending/accepted reservations.</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor_ID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Appointment_Date)
             </th>
@@ -33,12 +27,6 @@
     {
         <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Patient_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctor_ID)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Appointment_Date)
         </td>
         <td>
@@ -48,10 +36,10 @@
             @Html.DisplayFor(modelItem => item.Appointment_Status)
         </td>
         <td>
-            <a asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
             @if (item.Appointment_Status == "Pending")
             {
-                <a asp-action="Delete" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Cancel</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Appointment_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Cancel</a>
             }
         </td>
         </tr>

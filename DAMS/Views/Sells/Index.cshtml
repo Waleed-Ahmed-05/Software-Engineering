@@ -10,12 +10,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Medicine_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Seller_ID)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th>
@@ -30,20 +24,14 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Medicine_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Seller_ID)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Medicine_Price)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Edit</a> |
-                <a asp-action="Delete" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Selling_ID">Delete</a>
             </td>
         </tr>
     }

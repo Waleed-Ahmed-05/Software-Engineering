@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9w7zG3HCVds=",
+  "dgSpecHash": "EvUkW7prbBI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Gangster's Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\DAMS.csproj",
   "expectedPackageFiles": [
@@ -172,16 +172,5 @@
     "C:\\Users\\Gangster's Paradise\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Gangster's Paradise\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 7.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

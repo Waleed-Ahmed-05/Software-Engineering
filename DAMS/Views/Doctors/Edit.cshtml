@@ -19,11 +19,15 @@
                 <span asp-validation-for="User_ID" class="text-danger"></span>
             </div>
             <div class="form-group display Gap-Bottom">
+                <label class="Gap-2 Gap-Top">Clinic Name</label>
                 <input asp-for="Clinic_Name" class="form-control Gap width" placeholder="Clinic Name" />
+                <label class="Gap-2 Gap-Top">Clinic's Location</label>
                 <input asp-for="Location" class="form-control width" placeholder="Enter you current location" />
             </div>
             <div class="form-group display Gap-Bottom">
+                <label class="Gap-2 Gap-Top">Certification</label>
                 <input asp-for="Certification" class="form-control width Gap" placeholder="Provide Your Certification" />
+                <label class="Gap-2 Gap-Top" style="margin-right: 20px;">Field of Study</label>
                 <input asp-for="Study_Field" class="form-control width" placeholder="Enter Your Field of Study" />
             </div>
             <h2>Enter Your Availability Details</h2>
@@ -53,7 +57,7 @@
                 <label class="Gap-2 Gap-Top">End</label>
                 <input type="time" asp-for="Online_Duration_End" class="form-control width Gap" />
             </div>
-            <div class="form-group Gap-Left-2">
+            <div class="form-group">
                 <input type="submit" value="Confirm" class="btn btn-success" />
             </div>
         </form>
