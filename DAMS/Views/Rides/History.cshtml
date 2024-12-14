@@ -4,17 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>You are currently viewing you appointment history.</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Driver_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pickup_Location)
             </th>
@@ -26,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pickup_Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ride_Status)
             </th>
             <th></th>
         </tr>
@@ -42,12 +33,6 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Driver_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Patient_ID)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Pickup_Location)
                 </td>
                 <td>
@@ -60,10 +45,7 @@
                     @Html.DisplayFor(modelItem => item.Pickup_Date)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ride_Status)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" class="btn btn-primary">Details</a>
                 </td>
             </tr>
         }
@@ -77,12 +59,6 @@ else if (ViewBag.Choice == "Driver")
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Driver_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Patient_ID)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Pickup_Location)
                 </td>
                 <td>
@@ -95,10 +71,7 @@ else if (ViewBag.Choice == "Driver")
                     @Html.DisplayFor(modelItem => item.Pickup_Date)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ride_Status)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" class="btn btn-primary">Details</a>
                 </td>
             </tr>
         }

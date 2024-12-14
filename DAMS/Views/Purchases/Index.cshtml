@@ -4,28 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Your are currently viewing your current pending/accepted orders.</h2>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Selling_ID)
+                @Html.DisplayNameFor(model => model.Delivery_Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
+                @Html.DisplayNameFor(model => model.Delivery_Time)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Requested_Quantity)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Request_Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Delivery_Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Delivery_Time)
             </th>
             <th></th>
         </tr>
@@ -39,12 +33,6 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Selling_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Patient_ID)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Requested_Quantity)
                 </td>
                 <td>
@@ -57,10 +45,14 @@
                     @Html.DisplayFor(modelItem => item.Delivery_Time)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a> 
+                    <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a> 
                     @if (item.Request_Status == "Pending")
                     {
-                        <a asp-action="Delete" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Cancel</a>
+                        <a asp-action="Delete" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-danger">Cancel</a>
+                    }
+                    else if (item.Request_Status == "Accepted")
+                    {
+                        <a asp-action="Edit" asp-route-Status="Done" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-success">Mark as Recieved</a>
                     }
                 </td>
             </tr>
@@ -77,12 +69,6 @@ else if(ViewBag.Choice == "Doctor")
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Selling_ID) @Html.Raw(Sell.Selling_ID) @Html.Raw(Sell.Seller_ID) @Html.Raw(ViewBag.Data.User_ID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Patient_ID)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Requested_Quantity)
                     </td>
                     <td>
@@ -95,14 +81,10 @@ else if(ViewBag.Choice == "Doctor")
                         @Html.DisplayFor(modelItem => item.Delivery_Time)
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a> |
+                        <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a>
                         @if (item.Request_Status == "Pending")
                         {
-                            <a asp-action="Edit" asp-route-Status="Accepted" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Accept</a>
-                        }
-                        else if (item.Request_Status == "Accepted")
-                        {
-                            <a asp-action="Edit" asp-route-Status="Done" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Mark As Done</a>
+                            <a asp-action="Edit" asp-route-Status="Accepted" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-success">Accept</a>
                         }
                     </td>
                 </tr>

@@ -36,6 +36,24 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Purchase = await _context.Purchase.Where(u => u.Purchase_ID == id).FirstOrDefaultAsync();
+            ViewBag.Purchase = Purchase;
+            var Sell = await _context.Sell.Where(u => u.Selling_ID == Purchase.Selling_ID).FirstOrDefaultAsync();
+            ViewBag.Sell = Sell;
+            var Medicine = await _context.Medicine.Where(u => u.Medicine_ID == Sell.Medicine_ID).FirstOrDefaultAsync();
+            ViewBag.Medicine = Medicine;
+            var Pharmacologist = await _context.User.Where(u => u.User_ID == Sell.Seller_ID).FirstOrDefaultAsync();
+            if (Pharmacologist == null)
+            {
+                var Doctor = await _context.Doctor.Where(u => u.User_ID == Sell.Seller_ID).FirstOrDefaultAsync();
+                var Seller = await _context.User.Where(u => u.User_ID == Doctor.User_ID).FirstOrDefaultAsync();
+                ViewBag.Seller = Seller;
+            }
+            else
+            {
+                var Seller = Pharmacologist;
+                ViewBag.Seller = Seller;
+            }
             if (id == null)
             {
                 return NotFound();
@@ -134,6 +152,24 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Purchase = await _context.Purchase.Where(u => u.Purchase_ID == id).FirstOrDefaultAsync();
+            ViewBag.Purchase = Purchase;
+            var Sell = await _context.Sell.Where(u => u.Selling_ID == Purchase.Selling_ID).FirstOrDefaultAsync();
+            ViewBag.Sell = Sell;
+            var Medicine = await _context.Medicine.Where(u => u.Medicine_ID == Sell.Medicine_ID).FirstOrDefaultAsync();
+            ViewBag.Medicine = Medicine;
+            var Pharmacologist = await _context.User.Where(u => u.User_ID == Sell.Seller_ID).FirstOrDefaultAsync();
+            if (Pharmacologist == null)
+            {
+                var Doctor = await _context.Doctor.Where(u => u.User_ID == Sell.Seller_ID).FirstOrDefaultAsync();
+                var Seller = await _context.User.Where(u => u.User_ID == Doctor.User_ID).FirstOrDefaultAsync();
+                ViewBag.Seller = Seller;
+            }
+            else
+            {
+                var Seller = Pharmacologist;
+                ViewBag.Seller = Seller;
+            }
             if (id == null)
             {
                 return NotFound();

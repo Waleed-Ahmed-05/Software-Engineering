@@ -4,28 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>You are currently viewing you appointment history.</h2>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Selling_ID)
+                @Html.DisplayNameFor(model => model.Delivery_Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
+                @Html.DisplayNameFor(model => model.Delivery_Time)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Requested_Quantity)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Request_Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Delivery_Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Delivery_Time)
             </th>
             <th></th>
         </tr>
@@ -39,10 +33,10 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Selling_ID)
+                            @Html.DisplayFor(modelItem => item.Delivery_Date)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Patient_ID)
+                            @Html.DisplayFor(modelItem => item.Delivery_Time)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Requested_Quantity)
@@ -51,13 +45,7 @@
                             @Html.DisplayFor(modelItem => item.Request_Status)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Delivery_Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Delivery_Time)
-                        </td>
-                        <td>
-                            <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a>
+                            <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a>
                         </td>
                     </tr>
                 }
@@ -73,10 +61,10 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Selling_ID)
+                                @Html.DisplayFor(modelItem => item.Delivery_Date)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Patient_ID)
+                                @Html.DisplayFor(modelItem => item.Delivery_Time)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Requested_Quantity)
@@ -85,13 +73,7 @@
                                 @Html.DisplayFor(modelItem => item.Request_Status)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Delivery_Date)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Delivery_Time)
-                            </td>
-                            <td>
-                                <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID">Details</a>
+                                <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a>
                             </td>
                         </tr>
                     }

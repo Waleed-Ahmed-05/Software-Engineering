@@ -32,6 +32,12 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Appointment = await _context.Appointment.Where(u => u.Appointment_ID == id).FirstOrDefaultAsync();
+            ViewBag.Appointment = Appointment;
+            var Clinic = await _context.Doctor.Where(u => u.Doctor_ID == Appointment.Doctor_ID).FirstOrDefaultAsync();
+            ViewBag.Clinic = Clinic;
+            var Doctor = await _context.User.Where(u => u.User_ID == Clinic.User_ID).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
             if (id == null)
             {
                 return NotFound();
@@ -130,6 +136,12 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Appointment = await _context.Appointment.Where(u => u.Appointment_ID == id).FirstOrDefaultAsync();
+            ViewBag.Appointment = Appointment;
+            var Clinic = await _context.Doctor.Where(u => u.Doctor_ID == Appointment.Doctor_ID).FirstOrDefaultAsync();
+            ViewBag.Clinic = Clinic;
+            var Doctor = await _context.User.Where(u => u.User_ID == Clinic.User_ID).FirstOrDefaultAsync();
+            ViewBag.Doctor = Doctor;
             if (id == null)
             {
                 return NotFound();

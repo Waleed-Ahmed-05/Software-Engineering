@@ -4,12 +4,11 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Enter your pickup location to confirm reservation request.</h1>
 
-<h4>Ride</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div>
+    <div >
         <form asp-controller="Rides" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" hidden>
@@ -22,25 +21,18 @@
                 <input asp-for="Patient_ID" value="@ViewBag.Data.User_ID" class="form-control" />
                 <span asp-validation-for="Patient_ID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Pickup_Location" class="control-label"></label>
-                <input asp-for="Pickup_Location" class="form-control" />
-                <span asp-validation-for="Pickup_Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dropoff_Location" class="control-label"></label>
-                <input asp-for="Dropoff_Location" value="@ViewBag.Doctor.Location" class="form-control" />
+            <div class="form-group display Gap-Bottom">
+                <label asp-for="Pickup_Location" class="control-label Gap Gap-Top"><b>Pickup Location</b></label>
+                <input asp-for="Pickup_Location" class="form-control width Gap"/>
+                <label asp-for="Dropoff_Location" class="control-label Gap"><b>Dropoff Location</b></label>
+                <input asp-for="Dropoff_Location" value="@ViewBag.Doctor.Location" class="form-control readonly width" readonly/>
                 <span asp-validation-for="Dropoff_Location" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Pickup_Time" class="control-label"></label>
-                <input asp-for="Pickup_Time" value="@ViewBag.Appointment.Appointment_Time" class="form-control" />
-                <span asp-validation-for="Pickup_Time" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pickup_Date" class="control-label"></label>
-                <input asp-for="Pickup_Date" value="@ViewBag.Appointment.Appointment_Date" class="form-control" />
-                <span asp-validation-for="Pickup_Date" class="text-danger"></span>
+            <div class="form-group display Gap-Bottom">
+                <label asp-for="Pickup_Time" class="control-label Gap-Top" style="margin-right: 77px;"><b>Pickup Time</b></label>
+                <input asp-for="Pickup_Time" value="@ViewBag.Appointment.Appointment_Time" class="form-control readonly width Gap" readonly />
+                <label asp-for="Pickup_Date" class="control-label Gap Gap-Top" style="margin-right: 89px;"><b>Pickup Date</b></label>
+                <input asp-for="Pickup_Date" value="@ViewBag.Appointment.Appointment_Date" class="form-control readonly width" readonly />
             </div>
             <div class="form-group" hidden>
                 <label asp-for="Ride_Status" class="control-label"></label>
@@ -48,7 +40,7 @@
                 <span asp-validation-for="Ride_Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success Gap-Top"/>
             </div>
         </form>
     </div>

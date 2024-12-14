@@ -3,10 +3,11 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div>
     <div>
-        <h1>Enter your desired Date & Time to reserve an appointment.</h1>
+        <h2><a href="javascript:void(0);" onclick="window.history.back();"><i class="fa-solid fa-arrow-left" style="color: #020203;"></i></a> Enter your desired Date & Time to reserve an appointment.</h2>
         <hr />
         <form asp-controller="Appointments" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -20,7 +21,7 @@
                 <input asp-for="Doctor_ID" class="form-control" />
                 <span asp-validation-for="Doctor_ID" class="text-danger"></span>
             </div>
-            <div class="form-group display">
+            <div class="form-group display Gap-Bottom">
                 <label class="Gap-2 Gap-Top">Appointment Date</label>
                 <input asp-for="Appointment_Date" type="date" class="form-control width" />
                 <label class="Gap-2 Gap-Top Gap-Left-1">Appointment Time</label>

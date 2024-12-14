@@ -4,57 +4,44 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div>
-    <h4>Ride</h4>
+    <h1><a href="javascript:void(0);" onclick="window.history.back();"><i class="fa-solid fa-arrow-left" style="color: #020203;"></i></a> Current Ride Details</h1>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Driver_ID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Driver_ID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Patient_ID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Patient_ID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pickup_Location)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pickup_Location)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Dropoff_Location)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Dropoff_Location)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pickup_Time)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pickup_Time)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pickup_Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pickup_Date)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ride_Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ride_Status)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Ride_ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div style="width: 30%;padding: 10px;margin-bottom: 10px;">
+        <label style="font-size: 2em;"><b>Patient's Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Name: ")</b>@ViewBag.Data.First_Name @ViewBag.Data.Last_Name</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Gender(Age+): ")</b>@ViewBag.Data.Gender (@ViewBag.Data.Age+)</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Contact: ")</b>@ViewBag.Data.Contact</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Email: ")</b>@ViewBag.Data.Email</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;">
+        <label style="font-size: 2em;"><b>Ride Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Pickup: ")</b>@ViewBag.Ride.Pickup_Location</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Drop-off: ")</b>@ViewBag.Ride.Dropoff_Location</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Date: ")</b>@ViewBag.Ride.Pickup_Date</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Time: ")</b>@ViewBag.Ride.Pickup_Time</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Status: ")</b>@ViewBag.Ride.Ride_Status</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;margin-left: 30.75%;margin-top: -503px;">
+        <label style="font-size: 2em;"><b>Driver's Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Name: ")</b>@ViewBag.Driver.First_Name @ViewBag.Driver.Last_Name</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Gender(Age+): ")</b>@ViewBag.Driver.Gender (@ViewBag.Driver.Age+)</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Contact: ")</b>@ViewBag.Driver.Contact</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Email: ")</b>@ViewBag.Driver.Email</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;margin-top: 9px;margin-left: 30.75%;">
+        <label style="font-size: 2em;"><b>Vehicle Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Name: ")</b>@ViewBag.Vehicle.Vehicle_Name</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Category: ")</b>@ViewBag.Vehicle.Vehicle_Category</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Number Plate: ")</b>@ViewBag.Vehicle.Number_Plate</span>
+        </pre>
+    </div>
 </div>

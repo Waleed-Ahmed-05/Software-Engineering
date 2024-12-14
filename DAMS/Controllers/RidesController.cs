@@ -32,6 +32,12 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Ride = await _context.Ride.Where(u => u.Ride_ID == id).FirstOrDefaultAsync();
+            ViewBag.Ride= Ride;
+            var Vehicle = await _context.Driver.Where(u => u.Driver_ID == Ride.Driver_ID).FirstOrDefaultAsync();
+            ViewBag.Vehicle = Vehicle;
+            var Driver = await _context.User.Where(u => u.User_ID == Vehicle.User_ID).FirstOrDefaultAsync();
+            ViewBag.Driver = Driver;
             if (id == null)
             {
                 return NotFound();
@@ -130,6 +136,12 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Ride = await _context.Ride.Where(u => u.Ride_ID == id).FirstOrDefaultAsync();
+            ViewBag.Ride = Ride;
+            var Vehicle = await _context.Driver.Where(u => u.Driver_ID == Ride.Driver_ID).FirstOrDefaultAsync();
+            ViewBag.Vehicle = Vehicle;
+            var Driver = await _context.User.Where(u => u.User_ID == Vehicle.User_ID).FirstOrDefaultAsync();
+            ViewBag.Driver = Driver;
             if (id == null)
             {
                 return NotFound();

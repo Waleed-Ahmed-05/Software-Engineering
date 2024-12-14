@@ -4,41 +4,58 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div>
-    <h4>Appointment</h4>
+    <h1><a href="javascript:void(0);" onclick="window.history.back();"><i class="fa-solid fa-arrow-left" style="color: #020203;"></i></a> Current Appointment Details</h1>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Patient_ID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Patient_ID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Doctor_ID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Doctor_ID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Appointment_Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Appointment_Date)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Appointment_Time)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Appointment_Time)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Appointment_Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Appointment_Status)
-        </dd>
-    </dl>
+    <div style="width: 30%;padding: 10px;margin-bottom: 10px;">
+        <label style="font-size: 2em;"><b>Patient's Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Name: ")</b>@ViewBag.Data.First_Name @ViewBag.Data.Last_Name</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Gender(Age+): ")</b>@ViewBag.Data.Gender (@ViewBag.Data.Age+)</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Contact: ")</b>@ViewBag.Data.Contact</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Email: ")</b>@ViewBag.Data.Email</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;">
+        <label style="font-size: 2em;"><b>Appointment Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Date: ")</b>@ViewBag.Appointment.Appointment_Date</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Time: ")</b>@ViewBag.Appointment.Appointment_Time</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Status: ")</b>@ViewBag.Appointment.Appointment_Status</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;margin-left: 30.75%;margin-top: -444px;">
+        <label style="font-size: 2em;"><b>Doctor's Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Name: ")</b>@ViewBag.Doctor.First_Name @ViewBag.Doctor.Last_Name</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Gender(Age+): ")</b>@ViewBag.Doctor.Gender (@ViewBag.Doctor.Age+)</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Contact: ")</b>@ViewBag.Doctor.Contact</span>
+<span style="font-size: 1.5em;"><b>@Html.Raw("Email: ")</b>@ViewBag.Doctor.Email</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;margin-bottom: 48px;margin-left: 61.5%;margin-top: -18%;">
+        <label style="font-size: 2em;"><b>Clinic Details</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>Name: </b>@ViewBag.Clinic.Clinic_Name</span>
+<span style="font-size: 1.5em;"><b>Field: </b>@ViewBag.Clinic.Study_Field</span>
+<span style="font-size: 1.5em;"><b>Location: </b>@ViewBag.Clinic.Location</span>
+        </pre>
+    </div>
+    <div style="width: 30%;padding: 10px;margin-top: 10px;margin-left: 30.75%;">
+        <label style="font-size: 2em;"><b>Doctor's Availability</b></label>
+        <pre>
+<span style="font-size: 1.5em;"><b>Status: </b>@ViewBag.Clinic.Availability</span>
+            @if (ViewBag.Clinic.Availability == "Offline")
+            {
+<span style="font-size: 1.5em;"><b>Start(Offline): </b>@ViewBag.Clinic.Offline_Duration_Start</span>
+<span style="font-size: 1.5em;"><b>End(Offline): </b>@ViewBag.Clinic.Offline_Duration_End</span>
+            }
+            @if (ViewBag.Clinic.Availability == "Online")
+            {
+<span style="font-size: 1.5em;"><b>Start(Online): </b>@ViewBag.Clinic.Online_Duration_Start</span>
+<span style="font-size: 1.5em;"><b>End(Online): </b>@ViewBag.Clinic.Online_Duration_End</span>
+            }
+        </pre>
+    </div>
 </div>
