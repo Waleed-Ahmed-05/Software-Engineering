@@ -25,8 +25,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group display">
                 <label class="Gap Gap-Top">Your Personal Details</label>
-                <input asp-for="First_Name" class="form-control width Gap" placeholder="First Name" />
-                <input asp-for="Last_Name" class="form-control width" placeholder="Last Name" />
+                <input asp-for="First_Name" class="form-control width Gap" placeholder="First Name" maxlength="15" type="text"/>
+                <input asp-for="Last_Name" class="form-control width" placeholder="Last Name" maxlength="15" type="text"/>
             </div>
             <br>
             <div class="form-group display">
@@ -35,16 +35,16 @@
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
-                <input asp-for="Age" type="number" class="form-control width" placeholder="Enter your Age" />
+                <input asp-for="Age" type="number" class="form-control width" placeholder="Enter your Age" min="18" max="70" required/>
             </div>
             <br>
             <div class="form-group display">
                 <input asp-for="DOB" type="date" class="form-control width Gap Gap-Left" placeholder="Date of birth" />
-                <input asp-for="Contact" type="number" class="form-control width" placeholder="Enter your contact" />
+                <input asp-for="Contact" type="number" class="form-control width" placeholder="Enter your contact" min="03330000000" max="03999999999" required/>
             </div>
             <br>
             <div class="form-group display">
-                <input asp-for="CNIC" type="number" class="form-control width Gap Gap-Left" placeholder="Enter Your CNIC Number" />
+                <input asp-for="CNIC" type="number" class="form-control width Gap Gap-Left" placeholder="Enter Your CNIC Number" min="3000000000000" max="4000000000000" required/>
                 <select asp-for="Role" class="form-control width">
                     <option value="">Select Your Desired Role</option>
                     <option value="Patient">Patient</option>
@@ -58,11 +58,11 @@
                 <label class="Gap-Top">Your Account Credentials</label>
                 <div class="icon-container Gap-Left-1 Gap">
                     <i class="fa-solid fa-envelope"></i>
-                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Your Email" />
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Your Email"/>
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-lock"></i>
-                    <input asp-for="Password" type="password" class="form-control " placeholder="Enter Your Desired Password" />
+                    <input asp-for="Password" type="password" class="form-control " placeholder="Enter Your Desired Password" maxlength="12" minlength="8"/>
                 </div>
             </div>
             <br>
