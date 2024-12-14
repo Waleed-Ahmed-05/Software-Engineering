@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
@@ -22,11 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -36,33 +28,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-12-14T19:37:55.314Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentsController.cs",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AppointmentsController.cs",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
-              "RelativeToolTip": "Controllers\\AppointmentsController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T22:10:30.832Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Appointments\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Details.cshtml",
-              "RelativeToolTip": "Views\\Appointments\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T22:09:55.081Z",
               "EditorCaption": ""
             }
           ]

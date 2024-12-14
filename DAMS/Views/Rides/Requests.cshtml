@@ -4,23 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Your are currently viewing your current pending/accepted rides.</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Driver_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pickup_Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dropoff_Location)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pickup_Time)
             </th>
@@ -40,18 +28,6 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Driver_ID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Patient_ID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pickup_Location)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Dropoff_Location)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Pickup_Time)
                     </td>
                     <td>
@@ -61,14 +37,14 @@
                         @Html.DisplayFor(modelItem => item.Ride_Status)
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID">Details</a>
+                        <a asp-action="Details" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" class="btn btn-primary">Details</a>
                         @if (item.Ride_Status == "Pending")
                         {
-                            <a asp-action="Edit" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Accept">Accept</a>
+                            <a asp-action="Edit" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Accept" class="btn btn-success">Accept</a>
                         }
                         else if (item.Ride_Status == "Accepted")
                         {
-                            <a asp-action="Edit" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Mark_As_Done">Mark as Done</a>
+                            <a asp-action="Edit" asp-route-id="@item.Ride_ID" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-Choice="Mark_As_Done" class="btn btn-success">Mark as Done</a>
                         }
                     </td>
                 </tr>

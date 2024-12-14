@@ -38,6 +38,8 @@ namespace DAMS.Controllers
             ViewBag.Vehicle = Vehicle;
             var Driver = await _context.User.Where(u => u.User_ID == Vehicle.User_ID).FirstOrDefaultAsync();
             ViewBag.Driver = Driver;
+            var Patient = await _context.User.Where(u => u.User_ID == Ride.Patient_ID).FirstOrDefaultAsync();
+            ViewBag.Patient = Patient;
             if (id == null)
             {
                 return NotFound();
