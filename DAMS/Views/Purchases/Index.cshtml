@@ -33,16 +33,16 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Requested_Quantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Request_Status)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Delivery_Date)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Delivery_Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requested_Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Request_Status)
                 </td>
                 <td>
                     <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a> 
@@ -69,17 +69,17 @@ else if(ViewBag.Choice == "Doctor")
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Requested_Quantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Request_Status)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Delivery_Date)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Delivery_Time)
-                    </td>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Requested_Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Request_Status)
+                            </td>
                     <td>
                         <a asp-action="Details" asp-route-User_ID="@ViewBag.Data.User_ID" asp-route-id="@item.Purchase_ID" class="btn btn-primary">Details</a>
                         @if (item.Request_Status == "Pending")
