@@ -42,6 +42,8 @@ namespace DAMS.Controllers
             ViewBag.Sell = Sell;
             var Medicine = await _context.Medicine.Where(u => u.Medicine_ID == Sell.Medicine_ID).FirstOrDefaultAsync();
             ViewBag.Medicine = Medicine;
+            var Patient = await _context.User.Where(u => u.User_ID == Purchase.Patient_ID).FirstOrDefaultAsync();
+            ViewBag.Patient = Patient;
             var Pharmacologist = await _context.User.Where(u => u.User_ID == Sell.Seller_ID).FirstOrDefaultAsync();
             if (Pharmacologist == null)
             {

@@ -4,17 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>You are currently viewing reservation requests.</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor_ID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Appointment_Date)
             </th>
@@ -33,12 +27,6 @@
     if (item.Doctor_ID == ViewBag.Doctor.Doctor_ID && item.Appointment_Status != "Done")
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Patient_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Doctor_ID)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Appointment_Date)
             </td>

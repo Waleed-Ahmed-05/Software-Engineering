@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\purchases\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:views\\purchases\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\purchases\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:views\\purchases\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\controllers\\purchasescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:controllers\\purchasescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|solutionrelative:views\\appointments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41E5F09A-9124-4F8A-9F21-3A9AFA3893BB}|DAMS.csproj|c:\\users\\gangster\u0027s paradise\\desktop\\study material\\se\\se project\\dams\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -26,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -44,42 +40,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PurchasesController.cs",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\PurchasesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PurchasesController.cs",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\PurchasesController.cs",
-              "RelativeToolTip": "Controllers\\PurchasesController.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAqwKsAAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppointmentsController.cs",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "Controllers\\AppointmentsController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:13:44.246Z",
+              "WhenOpened": "2024-12-14T22:10:30.832Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Purchases\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Purchases\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Purchases\\Index.cshtml",
-              "RelativeToolTip": "Views\\Purchases\\Index.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE8AAACKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T21:47:44.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Purchases\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Purchases\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Purchases\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Purchases\\Delete.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointments\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Gangster\u0027s Paradise\\Desktop\\Study Material\\SE\\SE Project\\DAMS\\Views\\Appointments\\Details.cshtml",
+              "RelativeToolTip": "Views\\Appointments\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T21:42:55.101Z",
+              "WhenOpened": "2024-12-14T22:09:55.081Z",
               "EditorCaption": ""
             }
           ]

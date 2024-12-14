@@ -143,6 +143,9 @@ namespace DAMS.Controllers
         {
             var Data = await _context.User.Where(u => u.User_ID == User_ID).FirstOrDefaultAsync();
             ViewBag.Data = Data;
+            var Sell = await _context.Sell.Where(u => u.Selling_ID == id).FirstOrDefaultAsync();
+            var Medicine = await _context.Medicine.Where(u => u.Medicine_ID == Sell.Medicine_ID).FirstOrDefaultAsync();
+            ViewBag.Medicine = Medicine;
             if (id == null)
             {
                 return NotFound();

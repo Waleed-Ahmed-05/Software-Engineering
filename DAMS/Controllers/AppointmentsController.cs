@@ -38,6 +38,8 @@ namespace DAMS.Controllers
             ViewBag.Clinic = Clinic;
             var Doctor = await _context.User.Where(u => u.User_ID == Clinic.User_ID).FirstOrDefaultAsync();
             ViewBag.Doctor = Doctor;
+            var Patient = await _context.User.Where(u => u.User_ID == Appointment.Patient_ID).FirstOrDefaultAsync();
+            ViewBag.Patient = Patient;
             if (id == null)
             {
                 return NotFound();
